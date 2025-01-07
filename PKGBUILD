@@ -6,6 +6,7 @@ pkgdesc="A tool to take screenshots on Wayland (yad)"
 arch=('any')
 url="https://github.com/sfs-pra/wayland-screenshot"
 license=('GPL3')
+conflicts=('wayland-screenshot-git')
 depends=('yad' 'grim' 'wl-clipboard' 'swappy' 'slurp')
 optdepends=('sway' 'jq' 'labwc')
 source=("git+https://github.com/sfs-pra/wayland-screenshot.git")
