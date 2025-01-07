@@ -31,7 +31,7 @@ Run `wayland-screenshot.desktop` from menu entry, or run `wayland-screenshot` on
 Select mode, then press OK.
 Screenshots are saved to `~/ws_*`.
 
-
+![](/Screenshot_2020-05-13_01:45:50.png)
 
 ## Use floting window on sway
 
