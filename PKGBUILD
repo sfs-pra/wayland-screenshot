@@ -7,7 +7,7 @@ arch=('any')
 url="https://github.com/sfs-pra/wayland-screenshot"
 license=('GPL3')
 depends=('yad' 'grim' 'wl-clipboard' 'swappy' 'slurp')
-optdepends=('sway' 'jq' )
+optdepends=('sway' 'jq' 'labwc')
 source=("git+https://github.com/sfs-pra/wayland-screenshot.git")
 sha256sums=('SKIP')
 
