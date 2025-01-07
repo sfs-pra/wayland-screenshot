@@ -11,12 +11,6 @@
 
 ## Install
 
-- Archlinux(AUR)
-
-```
-$ yay -S wayland-screenshot-git
-```
-
 - Manual
 
 ```
@@ -36,5 +30,5 @@ Screenshots are saved to `~/ws_*`.
 ## Use floting window on sway
 
 ```
-for_window [app_id="zenity"] floating enable
+for_window [app_id="yad"] floating enable
 ```
