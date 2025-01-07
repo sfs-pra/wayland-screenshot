@@ -1,0 +1,63 @@
+# wayland_screenshot.po
+# Breton translation for wayland_screenshot
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: wayland_screenshot\n"
+"POT-Creation-Date: 2023-10-01 12:00+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: br\n"
+"Plural-Forms: nplurals=5; plural=(n%10 == 1 && n%100 != 11 && n%100 != 71 && n%100 != 91 ? 0 : n%10 == 2 && n%100 != 12 && n%100 != 72 && n%100 != 92 ? 1 : n%10 == 3 && n%100 != 13 && n%100 != 73 && n%100 != 93 ? 2 : n%10 == 4 && n%100 != 14 && n%100 != 74 && n%100 != 94 ? 3 : 4);\n"
+
+msgid "Wayland Screenshot"
+msgstr "Skeudenn ekran Wayland"
+
+msgid "Option"
+msgstr "Dibab"
+
+msgid "Mode"
+msgstr "Mod"
+
+msgid "All screen"
+msgstr "An holl skramm"
+
+msgid "Specific window"
+msgstr "Prenestr resis"
+
+msgid "Specific area"
+msgstr "Takad resis"
+
+msgid "Include cursor"
+msgstr "Enframmañ ar c'hursor"
+
+msgid "Time to wait"
+msgstr "Amzer da c'hortoz"
+
+msgid "Copy to"
+msgstr "Eilañ da"
+
+msgid "no"
+msgstr "nann"
+
+msgid "yes"
+msgstr "ya"
+
+msgid "clipboard"
+msgstr "bouestl eilad"
+
+msgid "canceling"
+msgstr "o nullañ"
+
+msgid "mode is null"
+msgstr "mod null"
+
+msgid "Mode empty"
+msgstr "Mod goullo"
+
+msgid "OK"
+msgstr "Mat eo"
