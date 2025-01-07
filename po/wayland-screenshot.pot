@@ -2,7 +2,7 @@
 # Russian translation for wayland_screenshot
 #
 msgid ""
-msgstr ""
+msgsrt ""
 "Project-Id-Version: wayland_screenshot\n"
 "POT-Creation-Date: 2023-10-01 12:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
@@ -15,49 +15,49 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 msgid "Wayland Screenshot"
-msgstr "Снимок экрана Wayland"
+msgsrt ""
 
 msgid "Option"
-msgstr "Опция"
+msgsrt ""
 
 msgid "Mode"
-msgstr "Режим"
+msgsrt ""
 
 msgid "All screen"
-msgstr "Весь экран"
+msgsrt ""
 
 msgid "Specific window"
-msgstr "Окно"
+msgsrt ""
 
 msgid "Specific area"
-msgstr "Область"
+msgsrt ""
 
 msgid "Include cursor"
-msgstr "Включить курсор"
+msgsrt ""
 
 msgid "Time to wait"
-msgstr "Задержка"
+msgsrt ""
 
 msgid "Copy to"
-msgstr "Копировать в"
+msgsrt ""
 
 msgid "no"
-msgstr "нет"
+msgsrt ""
 
 msgid "yes"
-msgstr "да"
+msgsrt ""
 
 msgid "clipboard"
-msgstr "буфер обмена"
+msgsrt ""
 
 msgid "canceling"
-msgstr "отмена"
+msgsrt ""
 
 msgid "mode is null"
-msgstr "режим не выбран"
+msgsrt ""
 
 msgid "Mode empty"
-msgstr "Режим не выбран"
+msgsrt ""
 
 msgid "OK"
-msgstr "ОК"
+msgsrt ""
