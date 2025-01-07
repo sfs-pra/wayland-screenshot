@@ -1,20 +1,27 @@
 #!/bin/bash
-
-FILEDIR=~/Downloads
+# https://github.com/onokatio/wayland-screenshot yad fork. GPL3
+FILEDIR="$HOME"
 OPTION=()
 
-values=$(zenity \
-  --title=wayland-screenshot \
-  --text="Option" \
-  --forms \
-  --add-combo="Mode" \
-    --combo-values="All screen|Specific window|Specific area" \
-  --add-combo="Include cursor[default: no]" \
-    --combo-values="no|yes" \
-    --add-entry="time to wait[default: 0s]" \
-    --add-combo="Copy to clipboard[default: yes]" \
-    --combo-values="yes|no" \
-      )
+# Initialize gettext
+TEXTDOMAIN=wayland_screenshot
+TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN TEXTDOMAINDIR
+ico=wayland-screenshot
+values=$(yad \
+  --title="$(gettext "Wayland Screenshot")" \
+  --image=$ico --window-icon=$ico --name=$ico \
+  --text="<b>$(gettext "Wayland Screenshot") $(gettext "Option")</b>" \
+  --form \
+  --field="$(gettext "Mode"):CB"  \
+  --field="$(gettext "Include cursor"):CB"  \
+  --field="$(gettext 'Time to wait'):NUM" \
+  --field="$(gettext "Copy to"):CB"  \
+  "$(gettext "All screen")!$(gettext "Specific window")!$(gettext "Specific area")" \
+  "$(gettext "no")!$(gettext "yes")" \
+  "" \
+  "swappy!$(gettext "clipboard")!~/ws-*.png" \
+  ) || exit 1
 
 result=$?
 
@@ -23,49 +30,55 @@ cursor=$(echo $values | cut -d '|' -f 2)
 wait=$(echo $values | cut -d '|' -f 3)
 clipboard=$(echo $values | cut -d '|' -f 4)
 
-if [ "$result" -eq 1 ];then      # select cancel
-	echo "canceling"
-	exit
+if [ "$result" -eq 1 ]; then      # select cancel
+  echo "$(gettext "canceling")"
+  exit
 fi
 
-if [ ! -z "$cursor" ] &&  [ "$cursor" == yes ];then
-	OPTION+="-c"
+if [ ! -z "$cursor" ] && [ "$cursor" == "yes" ]; then
+  OPTION+="-c"
 fi
 
-if [ -z "$mode" ] ;then       # select nothing
-	echo "mode is null"
-	zenity \
-		--title=wayland-screenshot \
-		--width=200 \
-		--warning \
-		--text="Mode empty"
-	exit
+if [ -z "$mode" ]; then       # select nothing
+  echo "$(gettext "mode is null")"
+  yad \
+    --title="$(gettext "Wayland Screenshot")" \
+    --width=200 \
+    --text="$(gettext "Mode empty")" \
+    --button="$(gettext "OK")":1
+  exit
 fi
 
-if [ ! -z "$wait" ];then
-	sleep $wait
+if [ ! -z "$wait" ]; then
+  sleep $wait
 fi
 
-if [ "$mode" == "All screen" ];then  # select All screen
-	true
-elif [ "$mode" == "Specific window" ];then  # select specify window
-	GEO="$(swaymsg -t get_tree | jq -r '.. | select(.pid? and .visible?) | .rect | "\(.x),\(.y) \(.width)x\(.height)"' | slurp)"
-elif [ "$mode" == "Specific area" ];then  # select specfy area
-	GEO="$(slurp)"
+if [ "$mode" == "$(gettext "All screen")" ]; then  # select All screen
+  true
+elif [ "$mode" == "$(gettext "Specific window")" ]; then  # select specify window
+  GEO="$(swaymsg -t get_tree | jq -r '.. | select(.pid? and .visible?) | .rect | "\(.x),\(.y) \(.width)x\(.height)"' | slurp)"
+elif [ "$mode" == "$(gettext "Specific area")" ]; then  # select specfy area
+  GEO="$(slurp)"
 else                         # error
-	echo $mode
+  echo $mode
 fi
 
-if [ -z "$clipboard" ] || [ "$clipboard" == yes ];then
-	if [ -z "$GEO" ]; then
-		grim $OPTION - | wl-copy;
-	else
-		grim $OPTION -g "$GEO" - | wl-copy;
-	fi
+if [ -z "$clipboard" ] || [ "$clipboard" == "clipboard" ]; then
+  if [ -z "$GEO" ]; then
+    grim $OPTION - | wl-copy
+  else
+    grim $OPTION -g "$GEO" - | wl-copy
+  fi
+elif [ -z "$clipboard" ] || [ "$clipboard" == "swappy" ]; then
+  if [ -z "$GEO" ]; then
+    grim $OPTION - | swappy -f -
+  else
+    grim $OPTION -g "$GEO" - | swappy -f -
+  fi
 else
-	if [ -z "$GEO" ]; then
-		grim $OPTION $FILEDIR/Screenshot_$(date +%F_%H.%M.%S).png
-	else
-		grim $OPTION -g "$GEO" $FILEDIR/Screenshot_$(date +%F_%H.%M.%S).png
-	fi
+  if [ -z "$GEO" ]; then
+    grim $OPTION $FILEDIR/ws-$(date +%F_%H.%M.%S).png
+  else
+    grim $OPTION -g "$GEO" $FILEDIR/ws-$(date +%F_%H.%M.%S).png
+  fi
 fi
