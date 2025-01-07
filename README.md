@@ -4,9 +4,10 @@
 
 - grim
 - slurp
-- zenity
-- jq
+- yad
+- jq (only sway)
 - wl-clipboard
+- swappy
 
 ## Install
 
