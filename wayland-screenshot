@@ -2,12 +2,16 @@
 # https://github.com/onokatio/wayland-screenshot yad fork. GPL3
 FILEDIR="$HOME"
 OPTION=()
-
 # Initialize gettext
-TEXTDOMAIN=wayland_screenshot
+TEXTDOMAIN=wayland-screenshot
 TEXTDOMAINDIR=/usr/share/locale
 export TEXTDOMAIN TEXTDOMAINDIR
-ico=wayland-screenshot
+
+which swappy 	&& swappy="swappy!"
+which image-gtk && imagegtk="image-gtk!"
+which wl-copy	&& wlcopy="$(gettext "clipboard")!"
+
+ico=applets-screenshooter
 values=$(yad \
   --title="$(gettext "Wayland Screenshot")" \
   --image=$ico --window-icon=$ico --name=$ico \
@@ -20,7 +24,7 @@ values=$(yad \
   "$(gettext "All screen")!$(gettext "Specific window")!$(gettext "Specific area")" \
   "$(gettext "no")!$(gettext "yes")" \
   "" \
-  "swappy!$(gettext "clipboard")!~/ws-*.png" \
+  "$swappy$imagegtk$wlcopy~/ws-*.png" \
   ) || exit 1
 
 result=$?
@@ -75,6 +79,13 @@ elif [ -z "$clipboard" ] || [ "$clipboard" == "swappy" ]; then
   else
     grim $OPTION -g "$GEO" - | swappy -f -
   fi
+elif [ -z "$clipboard" ] || [ "$clipboard" == "image-gtk" ]; then
+  if [ -z "$GEO" ]; then
+    grim $OPTION $FILEDIR/ws-$(date +%F_%H.%M.%S).png
+  else
+    grim $OPTION -g "$GEO" $FILEDIR/ws-$(date +%F_%H.%M.%S).png
+  fi
+	image-gtk $FILEDIR/ws-$(date +%F_%H.%M.%S).png
 else
   if [ -z "$GEO" ]; then
     grim $OPTION $FILEDIR/ws-$(date +%F_%H.%M.%S).png

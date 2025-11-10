@@ -1,14 +1,14 @@
 pkgname=wayland-screenshot-yad
 _pkgname=wayland-screenshot
-pkgver=2025.01
-pkgrel=07
+pkgver=2025.11
+pkgrel=10
 pkgdesc="A tool to take screenshots on Wayland (yad)"
 arch=('any')
 url="https://github.com/sfs-pra/wayland-screenshot"
 license=('GPL3')
 conflicts=('wayland-screenshot-git')
-depends=('yad' 'grim' 'wl-clipboard' 'swappy' 'slurp')
-optdepends=('sway' 'jq' 'labwc')
+depends=('yad' 'grim' 'wl-clipboard'  'slurp')
+optdepends=('sway' 'jq' 'labwc' 'swappy' 'image-gtk')
 source=("git+https://github.com/sfs-pra/wayland-screenshot.git")
 sha256sums=('SKIP')
 
