@@ -7,7 +7,8 @@
 - yad
 - jq (only sway)
 - wl-clipboard
-- swappy
+- image-gtk (optional)
+- swappy (optional)
 
 ## Install
 
