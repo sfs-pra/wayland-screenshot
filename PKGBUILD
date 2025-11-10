@@ -1,3 +1,5 @@
+# Maintainer: sfslinux@gmail.com
+
 pkgname=wayland-screenshot-yad
 _pkgname=wayland-screenshot
 pkgver=2025.11
@@ -11,6 +13,7 @@ depends=('yad' 'grim' 'wl-clipboard'  'slurp')
 optdepends=('sway' 'jq' 'labwc' 'swappy' 'image-gtk')
 source=("git+https://github.com/sfs-pra/wayland-screenshot.git")
 sha256sums=('SKIP')
+install=$pkgname.install
 
 package() {
   cd "$srcdir/$_pkgname"
