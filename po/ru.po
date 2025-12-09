@@ -1,10 +1,6 @@
-# wayland_screenshot.po
-# Russian translation for wayland_screenshot
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: wayland_screenshot\n"
-"POT-Creation-Date: 2023-10-01 12:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -12,52 +8,53 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: ru\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-
-msgid "Wayland Screenshot"
-msgstr "Снимок экрана Wayland"
-
-msgid "Option"
-msgstr "Опция"
-
-msgid "Mode"
-msgstr "Режим"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 msgid "All screen"
 msgstr "Весь экран"
 
-msgid "Specific window"
-msgstr "Окно"
-
-msgid "Specific area"
-msgstr "Область"
+msgid "Copy to"
+msgstr "Копировать в"
 
 msgid "Include cursor"
 msgstr "Включить курсор"
 
-msgid "Time to wait"
-msgstr "Задержка"
-
-msgid "Copy to"
-msgstr "Копировать в"
-
-msgid "no"
-msgstr "нет"
-
-msgid "yes"
-msgstr "да"
-
-msgid "clipboard"
-msgstr "буфер обмена"
-
-msgid "canceling"
-msgstr "отмена"
-
-msgid "mode is null"
-msgstr "режим не выбран"
+msgid "Mode"
+msgstr "Режим"
 
 msgid "Mode empty"
 msgstr "Режим не выбран"
 
 msgid "OK"
 msgstr "ОК"
+
+msgid "Option"
+msgstr "Опция"
+
+msgid "Specific area"
+msgstr "Область"
+
+msgid "Specific window"
+msgstr "Окно"
+
+msgid "Time to wait"
+msgstr "Задержка"
+
+msgid "Wayland Screenshot"
+msgstr "Снимок экрана Wayland"
+
+msgid "canceling"
+msgstr "отмена"
+
+msgid "clipboard"
+msgstr "буфер обмена"
+
+msgid "mode is null"
+msgstr "режим не выбран"
+
+msgid "no"
+msgstr "нет"
+
+msgid "yes"
+msgstr "да"
