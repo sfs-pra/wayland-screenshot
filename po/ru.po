@@ -30,7 +30,7 @@ msgid "OK"
 msgstr "ОК"
 
 msgid "Option"
-msgstr "Опция"
+msgstr "."
 
 msgid "Specific area"
 msgstr "Область"
